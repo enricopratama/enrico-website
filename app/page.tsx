@@ -2,11 +2,19 @@ import React from "react";
 import BentoGridComponent from "./components/bento-grid-component";
 import { AnimatedPinDemo } from "@/app/components/animated-pin";
 import { BackgroundBeamsWithCollision } from "@/app/components/ui/background-beams-with-collision";
-import { HoverBorderGradient } from "./components/ui/hover-border-gradient";
+
 import { Button } from "./components/ui/moving-border";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { FlipWords } from "./components/ui/flip-words";
+import { GlobeComponent } from "./components/globe-component";
 
 export default function Page() {
+  const words = [
+    "Full Stack Developer",
+    "Software Engineer",
+    "Tech Enthusiast",
+    "Website Developer",
+  ];
   return (
     <div className="h-full w-full">
       {/* Background beam before BentoGridComponent */}
@@ -23,9 +31,10 @@ export default function Page() {
             </div>
 
             {/* Full Stack Developer Text */}
-            <div className="text-sm sm:text-xl font-light tracking-wide relative italic flex flex-col sm:flex-row sm:justify-center gap-1">
+            <div className="text-sm sm:text-xl font-light tracking-wide relative italic flex flex-col sm:flex-row sm:justify-center">
               <div>
-                a <span className="font-bold">Full Stack Developer</span>
+                a
+                <FlipWords words={words} className="font-bold" />
               </div>
               based in Seattle, Washington.
             </div>

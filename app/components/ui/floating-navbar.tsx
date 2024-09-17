@@ -22,24 +22,22 @@ export const FloatingNav = ({
 }) => {
   const { scrollYProgress } = useScroll();
 
-  const [visible, setVisible] = useState(true); // Initially visible at the top
+  const [visible, setVisible] = useState(true);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Ensure current is a number
     if (typeof current === "number") {
       const previous = scrollYProgress.getPrevious();
 
-      // Ensure previous is not undefined
       if (typeof previous === "number") {
         let direction = current - previous;
 
         if (scrollYProgress.get() < 0.05) {
-          setVisible(true); // Always show when at the top
+          setVisible(true);
         } else {
           if (direction < 0) {
-            setVisible(true); // Show when scrolling up
+            setVisible(true);
           } else {
-            setVisible(false); // Hide when scrolling down
+            setVisible(false);
           }
         }
       }
@@ -78,7 +76,7 @@ export const FloatingNav = ({
           </Link>
         ))}
         <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
+          <span>Contact</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button>
       </motion.div>

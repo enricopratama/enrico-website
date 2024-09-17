@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
+    "@react-three/drei": "^9.112.0",
+    "@react-three/fiber": "^8.17.7",
     "@tabler/icons-react": "^3.16.0",
     "bootstrap-icons": "^1.11.3",
     "class-variance-authority": "^0.7.0",
@@ -21,7 +23,9 @@
     "react-dom": "^18",
     "react-router-dom": "^6.26.2",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.168.0",
+    "three-globe": "^2.31.1"
   },
   "devDependencies": {
     "@types/node": "^20",
