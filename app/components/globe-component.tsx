@@ -401,10 +401,10 @@ export function GlobeComponent() {
 
   const words = [
     {
-      text: "Projects,",
+      text: "Technologies,",
     },
     {
-      text: "Accesible",
+      text: "Acknowledged",
     },
     {
       text: "Worldwide.",
