@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import { AuroraBackground } from "./ui/aurora-background";
+import { TypewriterEffect } from "./ui/typewriter-effect";
 
 const World = dynamic(
   () => import("../components/ui/globe").then((m) => m.World),
@@ -397,36 +399,64 @@ export function GlobeComponent() {
     },
   ];
 
+  const words = [
+    {
+      text: "Projects,",
+    },
+    {
+      text: "Accesible",
+    },
+    {
+      text: "Worldwide.",
+      className: "text-blue-500 dark:text-blue-500",
+    },
+  ];
+
   return (
-    <div className="flex flex-row items-center justify-center py-40 md:py-32 h-3/4 md:h-auto dark:bg-black bg-white relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-[25rem] md:h-[50rem] px-4">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-          }}
-          className="div"
-        >
-          <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-            Projects, Accesible Worldwide
-          </h2>
-          <p className="text-center text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
-            Feel free to explore the projects that I have done below, accesible
-            from most parts of the world!
-          </p>
-        </motion.div>
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
-        <div className="absolute w-full -bottom-20 h-96 md:h-full z-10">
-          <World data={sampleArcs} globeConfig={globeConfig} />
+    <AuroraBackground>
+      {/* Motion for Aurora BG */}
+      <motion.div
+        initial={{ opacity: 0, y: 4 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center"
+      >
+        <div className="flex flex-row items-center justify-center py-40 md:py-32 h-auto dark:bg-black relative w-full px-4">
+          <div className="mx-auto w-full relative overflow-hidden h-[60vh] md:h-[62vh]">
+            {/* Motion for globe */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 1,
+              }}
+              className="div"
+            >
+              <h1 className="text-center text-3xl md:text-4xl font-bold text-black dark:text-white">
+                <TypewriterEffect words={words} />
+              </h1>
+              <p className="text-center text-sm md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
+                Feel free to explore the projects that I have done below,
+                accessible from most parts of the world!
+              </p>
+            </motion.div>
+            <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
+            <div className="absolute w-full -bottom-2 md:-bottom-20 h-96 md:h-full z-10 pt-8">
+              <World data={sampleArcs} globeConfig={globeConfig} />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </AuroraBackground>
   );
 }
