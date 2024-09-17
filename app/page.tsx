@@ -6,14 +6,12 @@ import { BackgroundBeamsWithCollision } from "@/app/components/ui/background-bea
 import { Button } from "./components/ui/moving-border";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { FlipWords } from "./components/ui/flip-words";
-import { GlobeComponent } from "./components/globe-component";
 
 export default function Page() {
   const words = [
     "Full Stack Developer",
     "Software Engineer",
     "Tech Enthusiast",
-    "Website Developer",
   ];
   return (
     <div className="h-full w-full">

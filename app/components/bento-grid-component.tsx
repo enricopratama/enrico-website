@@ -1,7 +1,11 @@
 "use client";
-import { cn } from "@/lib/utils";
-import React from "react";
 import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
+import { animate } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+import { GoCopilot } from "react-icons/go";
+import "../../public/bento-grid.css";
+
 import {
   IconBoxAlignRightFilled,
   IconClipboardCopy,
@@ -32,60 +36,200 @@ export default function BentoGridComponent() {
   );
 }
 
-const SkeletonOne = () => {
-  const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
+const Skeleton1 = () => {
+  const scale = [1, 1.1, 1];
+  const transform = ["translateY(0px)", "translateY(-4px)", "translateY(0px)"];
+  const sequence = [
+    [
+      ".circle-1",
+      {
+        scale,
+        transform,
       },
-    },
-  };
-  const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
+      { duration: 0.8 },
+    ],
+    [
+      ".circle-2",
+      {
+        scale,
+        transform,
       },
-    },
-  };
+      { duration: 0.8 },
+    ],
+    [
+      ".circle-3",
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
+    ],
+    [
+      ".circle-4",
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
+    ],
+    [
+      ".circle-5",
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
+    ],
+  ];
 
+  useEffect(() => {
+    // @ts-ignore
+    animate(sequence, {
+      repeat: Infinity,
+      repeatDelay: 1,
+    });
+  }, []);
   return (
-    <motion.div
-      initial="initial"
-      whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+    <div className="p-8 overflow-hidden h-full relative flex items-center justify-center">
+      <div className="flex flex-row flex-shrink-0 justify-center items-center gap-2">
+        <Container className="h-8 w-8 circle-1">
+          <JavaLogo className="h-4 w-4 " />
+        </Container>
+        <Container className="h-12 w-12 circle-2">
+          <MySQLLogo className="h-6 w-6 dark:text-white" />
+        </Container>
+        <Container className="circle-3">
+          <ReactLogo className="h-8 w-8 dark:text-white" />
+        </Container>
+        <Container className="h-12 w-12 circle-4">
+          <PythonLogo className="h-6 w-6 " />
+        </Container>
+        <Container className="h-8 w-8 circle-5">
+          <TypeScriptLogo className="h-4 w-4 " />
+        </Container>
+      </div>
+
+      <div className="h-20 w-px absolute top-15 m-auto z-40 bg-gradient-to-b from-transparent via-purple-500 to-transparent animate-move">
+        <div className="w-10 h-32 top-1/2 -translate-y-1/2 absolute -left-10">
+          <Sparkles />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Sparkles = () => {
+  const randomMove = () => Math.random() * 2 - 1;
+  const randomOpacity = () => Math.random();
+  const random = () => Math.random();
+  return (
+    <div className="absolute inset-0">
+      {[...Array(12)].map((_, i) => (
+        <motion.span
+          key={`star-${i}`}
+          animate={{
+            top: `calc(${random() * 100}% + ${randomMove()}px)`,
+            left: `calc(${random() * 100}% + ${randomMove()}px)`,
+            opacity: randomOpacity(),
+            scale: [1, 1.2, 0],
+          }}
+          transition={{
+            duration: random() * 2 + 4,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          style={{
+            position: "absolute",
+            top: `${random() * 100}%`,
+            left: `${random() * 100}%`,
+            width: `2px`,
+            height: `2px`,
+            borderRadius: "50%",
+            zIndex: 1,
+          }}
+          className="inline-block bg-black dark:bg-white"
+        ></motion.span>
+      ))}
+    </div>
+  );
+};
+
+const Container = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cn(
+        `h-16 w-16 rounded-full flex items-center justify-center bg-[rgba(248,248,248,0.01)]
+    shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)]
+    `,
+        className
+      )}
     >
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2  items-center space-x-2 bg-white dark:bg-black"
-      >
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
-      </motion.div>
-      <motion.div
-        variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
-      >
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
-      </motion.div>
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 bg-white dark:bg-black"
-      >
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
-      </motion.div>
-    </motion.div>
+      {children}
+    </div>
+  );
+};
+
+export const TypeScriptLogo = ({ className }: { className?: string }) => {
+  return (
+    <Image
+      className={className}
+      src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" // TypeScript logo URL
+      alt="TypeScript Logo"
+      width="28"
+      height="28"
+    />
+  );
+};
+
+export const MySQLLogo = ({ className }: { className?: string }) => {
+  return (
+    <Image
+      className={className}
+      src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg" // MySQL logo URL
+      alt="MySQL Logo"
+      width="28"
+      height="28"
+    />
+  );
+};
+
+export const ReactLogo = ({ className }: { className?: string }) => {
+  return (
+    <Image
+      className={`react-logo ${className}`} // Add the spinning class here
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+      alt="React Logo"
+      width="28"
+      height="28"
+    />
+  );
+};
+export const JavaLogo = ({ className }: { className?: string }) => {
+  return (
+    <Image
+      className={className}
+      src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" // Java logo URL
+      alt="Java Logo"
+      width="28"
+      height="28"
+    />
+  );
+};
+export const PythonLogo = ({ className }: { className?: string }) => {
+  return (
+    <Image
+      className={className}
+      src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" // Python logo URL
+      alt="Python Logo"
+      width="28"
+      height="28"
+    />
   );
 };
 
@@ -304,18 +448,19 @@ const SkeletonFive = () => {
 
 const items = [
   {
-    title: "AI Content Generation",
+    title: "Flexible Tech Stack",
     description: (
       <span className="text-sm">
-        Experience the power of AI in generating unique content.
+        I have experience with a plethora of techstacks, used for different
+        purposes.
       </span>
     ),
-    header: <SkeletonOne />,
+    header: <Skeleton1 />,
     className: "md:col-span-1",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Automated Proofreading",
+    title: "Tech Enthusiast",
     description: (
       <span className="text-sm">
         Let AI handle the proofreading of your documents.
@@ -326,7 +471,7 @@ const items = [
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Contextual Suggestions",
+    title: "Collaborative Development",
     description: (
       <span className="text-sm">
         Get AI-powered suggestions based on your writing context.
@@ -337,7 +482,7 @@ const items = [
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Sentiment Analysis",
+    title: "Properly ",
     description: (
       <span className="text-sm">
         Understand the sentiment of your text with AI analysis.
