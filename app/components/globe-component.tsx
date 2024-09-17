@@ -445,7 +445,7 @@ export function GlobeComponent() {
               <h1 className="text-center text-3xl md:text-4xl font-bold text-black dark:text-white">
                 <TypewriterEffect words={words} />
               </h1>
-              <p className="text-center text-sm md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
+              <p className="text-center text-xs md:text-sm font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
                 Feel free to explore the projects that I have done below,
                 accessible from most parts of the world!
               </p>
