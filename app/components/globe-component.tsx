@@ -401,14 +401,14 @@ export function GlobeComponent() {
 
   const words = [
     {
-      text: "Technologies,",
+      text: "Building",
     },
     {
-      text: "Acknowledged",
+      text: "Projects,",
     },
     {
-      text: "Worldwide.",
-      className: "text-blue-500 dark:text-blue-500",
+      text: "Worldwide",
+      className: "text-violet-500 dark:text-blue-500",
     },
   ];
 
@@ -416,14 +416,14 @@ export function GlobeComponent() {
     <AuroraBackground>
       {/* Motion for Aurora BG */}
       <motion.div
-        initial={{ opacity: 0, y: 4 }}
+        initial={{ opacity: 0.0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.3,
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-4 items-center justify-center"
+        className="relative flex flex-col gap-4 items-center justify-center px-4"
       >
         <div className="flex flex-row items-center justify-center py-40 md:py-32 h-auto dark:bg-black relative w-full px-4">
           <div className="mx-auto w-full relative overflow-hidden h-[60vh] md:h-[62vh]">
@@ -446,8 +446,8 @@ export function GlobeComponent() {
                 <TypewriterEffect words={words} />
               </h1>
               <p className="text-center text-xs md:text-sm font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
-                Feel free to explore the projects that I have done below,
-                accessible from most parts of the world!
+                I develop projects to clients & users from all over the world.
+                Feel free to explore a number of my projects below!
               </p>
             </motion.div>
             <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
