@@ -1,8 +1,10 @@
 import React from "react";
-import BentoGridComponent from "./bento-grid";
+import BentoGridComponent from "./components/bento-grid-component";
 import { AnimatedPinDemo } from "@/app/components/animated-pin";
-import { TracingBeam } from "@/app/components/ui/tracing-beam";
 import { BackgroundBeamsWithCollision } from "@/app/components/ui/background-beams-with-collision";
+import { HoverBorderGradient } from "./components/ui/hover-border-gradient";
+import { Button } from "./components/ui/moving-border";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Page() {
   return (
@@ -22,10 +24,20 @@ export default function Page() {
 
             {/* Full Stack Developer Text */}
             <div className="text-sm sm:text-xl font-light tracking-wide relative italic flex flex-col sm:flex-row sm:justify-center gap-1">
-              <div>git
+              <div>
                 a <span className="font-bold">Full Stack Developer</span>
               </div>
               based in Seattle, Washington.
+            </div>
+            <div className="mt-4 md:mt-0">
+              <Button
+                borderRadius="1.75rem"
+                className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+              >
+                <div className="font-bold tracking-normal text-[15px] align-baseline">
+                  Contact Me <i className="bi bi-cursor-fill ml-2"></i>
+                </div>
+              </Button>
             </div>
           </div>
         </h2>
