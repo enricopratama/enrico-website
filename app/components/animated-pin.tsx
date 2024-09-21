@@ -121,8 +121,8 @@ export function AnimatedPinDemo() {
                 </h3>
                 <div className="text-base !m-0 !p-0 font-normal">
                   <span className="text-neutral-500 text-md">
-                    Explore the Indonesian Student Association&#39;s website,
-                    where I contribute as the Lead Website Developer.
+                    Indonesian Student Association&#39;s website, where I
+                    contribute as the Lead Website Developer, with 4 other devs.
                   </span>
                 </div>
                 <div className="flex flex-row items-center justify-between mt-2 w-full gap-2">
