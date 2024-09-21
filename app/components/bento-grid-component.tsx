@@ -3,7 +3,6 @@ import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
 import { animate } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { GoCopilot } from "react-icons/go";
 import "../../public/bento-grid.css";
 
 import {
