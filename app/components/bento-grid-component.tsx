@@ -241,7 +241,7 @@ const SkeletonTwo = () => {
         secondImage="https://assets.aceternity.com/code-solution.png"
         firstImageClassName="object-cover object-left-top w-full h-full"
         secondImageClassname="object-cover object-left-top w-full h-full"
-        className="h-auto md:h-[500px] md:w-full"
+        className="h-96 w-full md:h-[500px]"
         slideMode="hover"
       />
     </div>
@@ -445,8 +445,9 @@ const items = [
     title: "Industry-level Code",
     description: (
       <span className="text-sm">
-        I develop code with industry-level software design & implementation
-        practices, following best collaborative coding practices.
+        I thrive to develop clean, scalable code using industry-standard design
+        and development practices, committed to collaborating effectively with
+        teams.
       </span>
     ),
     header: <SkeletonTwo />,
