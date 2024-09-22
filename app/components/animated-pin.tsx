@@ -19,23 +19,23 @@ export function AnimatedPinDemo() {
     {
       id: 1,
       name: "Next JS",
-      image: "/nextjslogo.webp",
+      image: "/logos/nextjslogo.webp",
     },
     {
       id: 2,
       name: "TypeScript",
-      image: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+      image: "hlogos/ttps://cdn.worldvectorlogo.com/logos/typescript.svg",
     },
     {
       id: 3,
       name: "JavaScript",
-      image: "/JavaScript-logo.png",
+      image: "/logos/JavaScript-logo.png",
     },
 
     {
       id: 4,
       name: "Tailwind CSS",
-      image: "/tailwindcss.png",
+      image: "/logos/tailwindcss.png",
     },
   ];
 
@@ -43,27 +43,27 @@ export function AnimatedPinDemo() {
     {
       id: 1,
       name: "React JS",
-      image: "/reactLogo-2.png",
+      image: "/logos/reactLogo-2.png",
     },
     {
       id: 2,
       name: "Firebase",
-      image: "/firebaselogo.png",
+      image: "/logos/firebaselogo.png",
     },
     {
       id: 3,
       name: "JavaScript",
-      image: "/JavaScript-logo.png",
+      image: "/logos/JavaScript-logo.png",
     },
     {
       id: 4,
       name: "Node JS",
-      image: "/nodeLogo.jpg",
+      image: "/logos/nodeLogo.jpg",
     },
     {
       id: 5,
       name: "Figma",
-      image: "/figmaLogo.png",
+      image: "/logos/figmaLogo.png",
     },
   ];
 
