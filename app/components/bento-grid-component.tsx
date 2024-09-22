@@ -14,6 +14,7 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Compare } from "./ui/compare";
 
 export default function BentoGridComponent() {
   return (
@@ -233,42 +234,17 @@ export const PythonLogo = ({ className }: { className?: string }) => {
 };
 
 const SkeletonTwo = () => {
-  const variants = {
-    initial: {
-      width: 0,
-    },
-    animate: {
-      width: "100%",
-      transition: {
-        duration: 0.2,
-      },
-    },
-    hover: {
-      width: ["0%", "100%"],
-      transition: {
-        duration: 2,
-      },
-    },
-  };
-  const arr = new Array(6).fill(0);
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
-    >
-      {arr.map((_, i) => (
-        <motion.div
-          key={"skelenton-two" + i}
-          variants={variants}
-          style={{
-            maxWidth: Math.random() * (100 - 40) + 40 + "%",
-          }}
-          className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2  items-center space-x-2 bg-neutral-100 dark:bg-black w-full h-4"
-        ></motion.div>
-      ))}
-    </motion.div>
+    <div className="justify-center">
+      <Compare
+        firstImage="https://assets.aceternity.com/code-problem.png"
+        secondImage="https://assets.aceternity.com/code-solution.png"
+        firstImageClassName="object-cover object-left-top"
+        secondImageClassname="object-cover object-left-top"
+        className="h-[400px] w-[280px] md:h-[500px] md:w-[555px]"
+        slideMode="hover"
+      />
+    </div>
   );
 };
 
@@ -336,7 +312,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+          src="/enrico_pic_isauw.png"
           alt="avatar"
           height="100"
           width="100"
@@ -351,7 +327,7 @@ const SkeletonFour = () => {
       </motion.div>
       <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
         <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+          src="/enrico_pic_isauw.png"
           alt="avatar"
           height="100"
           width="100"
@@ -369,7 +345,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+          src="/enrico_pic_isauw.png"
           alt="avatar"
           height="100"
           width="100"
@@ -423,23 +399,30 @@ const SkeletonFive = () => {
         className="flex flex-row rounded-2xl border border-neutral-200 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
       >
         <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+          src="/enrico_pic_isauw.png"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
         <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
+          I need to a way to efficiently send emails at 500 messages per second.
         </p>
       </motion.div>
       <motion.div
         variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
+        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black pl-4"
       >
-        <p className="text-xs text-neutral-500">Use PHP.</p>
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
+        <p className="text-xs text-neutral-500">
+          We can use LLMs (Langchain) to autonomate this.
+        </p>
+        <Image
+          src="/enrico_pic_isauw.png"
+          alt="avatar"
+          height="100"
+          width="100"
+          className="rounded-full h-10 w-10"
+        />
       </motion.div>
     </motion.div>
   );
@@ -451,7 +434,7 @@ const items = [
     description: (
       <span className="text-sm">
         I have experience with a plethora of techstacks, used for different
-        purposes.
+        projects.
       </span>
     ),
     header: <Skeleton1 />,
@@ -459,21 +442,23 @@ const items = [
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Tech Enthusiast",
+    title: "Industry-level Code",
     description: (
       <span className="text-sm">
-        Let AI handle the proofreading of your documents.
+        I develop code with industry-level software design & implementation
+        practices, following best collaborative coding practices.
       </span>
     ),
     header: <SkeletonTwo />,
-    className: "md:col-span-1",
+    className: "md:col-span-2 md:row-span-2",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Collaborative Development",
+    title: "Tech Enthusiast",
     description: (
       <span className="text-sm">
-        Get AI-powered suggestions based on your writing context.
+        I keep up with latest tech-related news, implementing them to boost
+        project development.
       </span>
     ),
     header: <SkeletonThree />,
@@ -493,10 +478,11 @@ const items = [
   },
 
   {
-    title: "Text Summarization",
+    title: "Optimized Problem Solving",
     description: (
       <span className="text-sm">
-        Summarize your lengthy documents with AI technology.
+        I choose the suitable technologies and techstacks to solve real business
+        problems.
       </span>
     ),
     header: <SkeletonFive />,

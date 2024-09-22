@@ -18,63 +18,52 @@ export function AnimatedPinDemo() {
   const techStackIsauw = [
     {
       id: 1,
-      name: "Next.js",
-      image: "/nextjslogo.webp", // Next.js logo
+      name: "Next JS",
+      image: "/nextjslogo.webp",
     },
     {
       id: 2,
       name: "TypeScript",
-      image: "https://cdn.worldvectorlogo.com/logos/typescript.svg", // TypeScript logo
+      image: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
     },
     {
       id: 3,
       name: "JavaScript",
-      image: "/JavaScript-logo.png", // JavaScript logo
+      image: "/JavaScript-logo.png",
     },
 
     {
       id: 4,
-      name: "TailwindCSS",
-      image: "/tailwindcss.png", // Tailwind CSS logo
+      name: "Tailwind CSS",
+      image: "/tailwindcss.png",
     },
   ];
 
   const techStackEchosystem = [
     {
       id: 1,
-      name: "John Doe",
-      image:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+      name: "React JS",
+      image: "/reactLogo-2.png",
     },
     {
       id: 2,
-      name: "Robert Johnson",
-      image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      name: "Firebase",
+      image: "/firebaselogo.png",
     },
     {
       id: 3,
-      name: "Jane Smith",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      name: "JavaScript",
+      image: "/JavaScript-logo.png",
     },
     {
       id: 4,
-      name: "Emily Davis",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      name: "Node JS",
+      image: "/nodeLogo.jpg",
     },
     {
       id: 5,
-      name: "Tyler Durden",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
-    },
-    {
-      id: 6,
-      name: "Dora",
-      image:
-        "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+      name: "Figma",
+      image: "/figmaLogo.png",
     },
   ];
 
@@ -82,7 +71,7 @@ export function AnimatedPinDemo() {
     <div className="mt-16 md:mt-24 mx-auto mb-16">
       <HeroHighlight>
         {/* Radial gradient for the container to give a faded look */}
-        <div className="h-[20rem]">
+        <div className="h-[15rem] md:h-[20rem]">
           <motion.h1
             initial={{
               opacity: 0,
@@ -155,10 +144,10 @@ export function AnimatedPinDemo() {
                     audiences and artists.
                   </span>
                 </div>
-                <div className="flex flex-row items-center justify-between mt-2 w-full">
+                <div className="flex flex-row items-center justify-between mt-2 w-full gap-2">
                   <AnimatedTooltip items={techStackEchosystem} />
-                  <span className="ml-12 text-sm text-neutral-600">
-                    Live preview
+                  <span className="ml-10 text-md text-neutral-600">
+                    Live Site <i className="bi bi-cursor-fill ml-2"></i>
                   </span>
                 </div>
               </div>
