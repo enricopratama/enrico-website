@@ -36,7 +36,7 @@ export default function BentoGridComponent() {
   );
 }
 
-const Skeleton1 = () => {
+const SkeletonOne = () => {
   const scale = [1, 1.1, 1];
   const transform = ["translateY(0px)", "translateY(-4px)", "translateY(0px)"];
   const sequence = [
@@ -235,13 +235,13 @@ export const PythonLogo = ({ className }: { className?: string }) => {
 
 const SkeletonTwo = () => {
   return (
-    <div className="justify-center">
+    <div className="justify-center ">
       <Compare
         firstImage="https://assets.aceternity.com/code-problem.png"
         secondImage="https://assets.aceternity.com/code-solution.png"
         firstImageClassName="object-cover object-left-top"
         secondImageClassname="object-cover object-left-top"
-        className="h-[400px] w-[280px] md:h-[500px] md:w-[555px]"
+        className="h=[] md:h-[500px] md:w-[555px]"
         slideMode="hover"
       />
     </div>
@@ -437,7 +437,7 @@ const items = [
         projects.
       </span>
     ),
-    header: <Skeleton1 />,
+    header: <SkeletonOne />,
     className: "md:col-span-1",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
