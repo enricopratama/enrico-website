@@ -24,7 +24,7 @@ export function AnimatedPinDemo() {
     {
       id: 2,
       name: "TypeScript",
-      image: "/logos/https://cdn.worldvectorlogo.com/logos/typescript.svg",
+      image: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
     },
     {
       id: 3,

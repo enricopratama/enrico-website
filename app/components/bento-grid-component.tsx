@@ -235,13 +235,13 @@ export const PythonLogo = ({ className }: { className?: string }) => {
 
 const SkeletonTwo = () => {
   return (
-    <div className="justify-center ">
+    <div className="flex justify-center">
       <Compare
         firstImage="https://assets.aceternity.com/code-problem.png"
         secondImage="https://assets.aceternity.com/code-solution.png"
-        firstImageClassName="object-cover object-left-top"
-        secondImageClassname="object-cover object-left-top"
-        className="h=[] md:h-[500px] md:w-[555px]"
+        firstImageClassName="object-cover object-left-top w-full h-full"
+        secondImageClassname="object-cover object-left-top w-full h-full"
+        className="h-auto md:h-[500px] md:w-full"
         slideMode="hover"
       />
     </div>
