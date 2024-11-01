@@ -76,7 +76,7 @@ export const FloatingNav = ({
           </Link>
         ))}
         <a
-          href="https://drive.google.com/file/d/1EH_6Rr5ggb1kscfsDKnPmwKlWU45BmiB/view?usp=sharing"
+          href="https://drive.google.com/file/d/1Ao5iFqR-l6kjwP46v_Z1k9h2yO6qIg4U/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
