@@ -1,60 +1,60 @@
-"use client";
-import { useEffect } from "react";
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import SceneInit from "../../lib/SceneInit.js";
+// "use client";
+// import { useEffect } from "react";
+// import * as THREE from "three";
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+// import SceneInit from "../../lib/SceneInit.js";
 
-function App() {
-  useEffect(() => {
-    const test = new SceneInit("myThreeJsCanvas");
-    test.initialize();
-    test.animate();
+// function App() {
+//   useEffect(() => {
+//     const test = new SceneInit("myThreeJsCanvas");
+//     test.initialize();
+//     test.animate();
 
-    // const boxGeometry = new THREE.BoxGeometry(8, 8, 8);
-    // const boxMaterial = new THREE.MeshNormalMaterial();
-    // const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
-    
-    // test.scene.add(boxMesh);
+//     // const boxGeometry = new THREE.BoxGeometry(8, 8, 8);
+//     // const boxMaterial = new THREE.MeshNormalMaterial();
+//     // const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
 
-    let loadedModel: any;
-    const glftLoader = new GLTFLoader();
-    glftLoader.load("./testShirtISAUW.glb", (gltfScene) => {
-      loadedModel = gltfScene;
-      // console.log(loadedModel);
+//     // test.scene.add(boxMesh);
 
-      // gltfScene.scene.rotation.y = Math.PI / 8;
-      // gltfScene.scene.position.y = 3;
-      gltfScene.scene.scale.set(5, 5, 5);
-      if (test.scene) {
-        test.scene.add(gltfScene.scene);
-      }
-    });
+//     let loadedModel: any;
+//     const glftLoader = new GLTFLoader();
+//     glftLoader.load("./testShirtISAUW.glb", (gltfScene) => {
+//       loadedModel = gltfScene;
+//       // console.log(loadedModel);
 
-    const animate = () => {
-      if (loadedModel) {
-        // loadedModel.scene.rotation.x += 0.01;
-        // loadedModel.scene.rotation.y += 0.01;
-        // loadedModel.scene.rotation.z += 0.01;
-      }
-      requestAnimationFrame(animate);
-    };
-    animate();
+//       // gltfScene.scene.rotation.y = Math.PI / 8;
+//       // gltfScene.scene.position.y = 3;
+//       gltfScene.scene.scale.set(5, 5, 5);
+//       if (test.scene) {
+//         test.scene.add(gltfScene.scene);
+//       }
+//     });
 
-    return () => {
-      if (test.scene) {
-        test.scene.clear();
-      }
-      if (test.renderer) {
-        test.renderer.dispose();
-      }
-    };
-  }, []);
+//     const animate = () => {
+//       if (loadedModel) {
+//         // loadedModel.scene.rotation.x += 0.01;
+//         // loadedModel.scene.rotation.y += 0.01;
+//         // loadedModel.scene.rotation.z += 0.01;
+//       }
+//       requestAnimationFrame(animate);
+//     };
+//     animate();
 
-  return (
-    <div>
-      <canvas id="myThreeJsCanvas" />
-    </div>
-  );
-}
+//     return () => {
+//       if (test.scene) {
+//         test.scene.clear();
+//       }
+//       if (test.renderer) {
+//         test.renderer.dispose();
+//       }
+//     };
+//   }, []);
 
-export default App;
+//   return (
+//     <div>
+//       <canvas id="myThreeJsCanvas" />
+//     </div>
+//   );
+// }
+
+// export default App;
