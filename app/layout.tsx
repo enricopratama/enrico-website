@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { NavbarComponent } from "@/app/components/navbar";
-import { TracingBeamDemo } from "./components/tracing-beam-component";
 
 // Mofify this to change global font
 const inter = Inter({ subsets: ["latin"] });
