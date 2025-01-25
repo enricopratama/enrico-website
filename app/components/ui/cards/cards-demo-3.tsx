@@ -67,7 +67,7 @@ const Skeleton = () => {
 
   useEffect(() => {
     // @ts-ignore
-    animate(sequence, {
+    animate(sequence, [], {
       repeat: Infinity,
       repeatDelay: 1,
     });
