@@ -1,12 +1,12 @@
 import React from "react";
-import { GlobeComponent } from "../components/globe-component";
-import BentoGridComponent from "../components/bento-grid-component";
 import { StickyScrollComponent } from "../components/stick-scroll-component";
+import { WorldMapDemo } from "../components/world-map-demo";
 
+// TODO: make sure to fix worldMapDemo so that it only renders once it's full loaded (can use loader)
 export default function Page() {
   return (
     <div className="">
-      <GlobeComponent />
+      <WorldMapDemo />
       <StickyScrollComponent />
     </div>
   );
